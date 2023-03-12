@@ -2,7 +2,7 @@
 
 ## Danny Aka Siza Study Org
 
-Be Welcome to my Study Org!
+Be Welcome to my Study Organization!
 
 ## Codes Location
 

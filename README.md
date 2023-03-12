@@ -4,6 +4,13 @@
 
 Be Welcome to my Study Org!
 
+## Codes Location
+
+- [Apex Classes (Bo, Dao, Batch, Schedule, Futures, Tests, Controllers for LWC)](/force-app/main/default/classes/)
+- [Triggers](/force-app/main/default/triggers/)
+- [LWC (Front)](/force-app/main/default/lwc/)
+- [Visual Force)](/force-app/main/default/pages/)
+
 ## SalesForce Dx Project Infos Read All About It
 
 - [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)

@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Tabela De Mundo" >
+        <div class="slds-grid slds-wrap">
+            <lightning-input class="slds-size_1-of-3 slds-p-around_small" 
+                type="toggle" label="Selecionar Tudo" checked={selectAll}               onchange={changeSAll}></lightning-input>
+            <lightning-input class="slds-size_1-of-3 slds-p-around_small" 
+                type="toggle" label="Mostrar Cor" checked={showCor}                     onchange={changeSCor}></lightning-input>
+            <lightning-input class="slds-size_1-of-3 slds-p-around_small" 
+                type="toggle" label="Mostrar Quantidade de luas" checked={showQtdLua}   onchange={schangeSQtdLua}></lightning-input>
+        </div>
+        <div class="slds-p-around_small slds-m-top_medium slds-m-bottom_x-large slds-theme_default ">
+            <template if:true={mostrarTabela}>
+                <c-tabela-mundo-lista   mundo-list-external={mundoList}
+                                        select-all-recieved={selectAll} 
+                                        mostrar-tabela-recieved={mostrarTabela} 
+                                        show-cor-recieved={showCor}
+                                        show-qtd-lua-recieved={showQtdLua}
+                                        ></c-tabela-mundo-lista>
+            </template>
+
+        </div>
+
+        
+        <!--
+            
+        <tr>
+            <td>Nome</td>
+            <td>Cor</td>
+            <td>Possui Agua</td>
+            <td>Quantidade de Luas</td>
+            <td>Tamanho</td>
+        </tr>            
+        
+        <template for:each={mundoToList} for:item="item">
+            <tr key={item.id}>
+                <td>{item.nome}</td>
+                <td>{item.cor}</td>
+                <td>{item.pAgua}</td>
+                <td>{item.quantLuas}</td>
+                <td>{item.tamanho}</td>
+            </tr>
+        </template>
+-->
+    </lightning-card>
+</template>

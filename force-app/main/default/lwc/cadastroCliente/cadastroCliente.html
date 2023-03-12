@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <div  class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                <lightning-combobox
+                label="Tipo de Cliente"
+                placeholder="Pf ou Pj"
+                options={options}
+                data-id="recordType" onchange={onHandler} ></lightning-combobox>
+            </div>
+
+            <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg" if:true={cliPjBool}>
+                <!-- <lightning-input data-id="cnpj" onblur={onHandler} type="text" label="Cnpj"></lightning-input> -->
+                <c-cadastro-cliente-cnpj onsetcpf={onHandler}></c-cadastro-cliente-cnpj>
+            </div>
+            <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg" if:true={cliPfBool}>
+                <!-- <lightning-input data-id="cpf" onblur={onHandler} type="text" label="Cpf"></lightning-input> -->
+                <c-cadastro-cliente-cpf></c-cadastro-cliente-cpf>
+            </div>
+            <div class="lds-col slds-size_1-of-1 slds-p-around_small lgc-bg">
+                <lightning-input data-id="nome" onblur={onHandler} type="text" label="Nome de Cliente"></lightning-input>
+            </div>
+            <div class="lds-col slds-size_1-of-1 slds-p-around_small lgc-bg">
+                <button class="slds-button slds-button_neutral" onsetcpf={onHandler} onclick={onHandle}>Limpar</button>
+                <button class="slds-button slds-button_brand" onclick={inserirCliente}>Inserir</button>   
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Criar Mundo" icon-name="custom:custom14">
+        <div class="slds-m-top_medium slds-m-bottom_x-large slds-theme_default ">
+            <div class="slds-grid slds-wrap">
+                
+                <!-- var por var
+                <div value={nome} onchange={onEscreveNome} class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input type="text" label="Mundo Name"></lightning-input>
+                </div>
+                <div value={cor} onchange={onEscreveCor} class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input type="text" label="Cor"></lightning-input>
+                </div>
+                <div value={pAgua} onchange={onEscrevePAgua} class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input type="text" label="Possui Agua"></lightning-input>
+                </div>
+                <div value={quantLuas} onchange={onEscreveQuantLuas} class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input type="text" label="Quantidade de Luas"></lightning-input>
+                </div>
+                <div value={tamanho} onchange={onEscreveTamanho} class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input type="text" label="Tamanho"></lightning-input>
+                </div>
+                <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <button class="slds-button slds-button_neutral">Limpar</button>
+                    <button class="slds-button slds-button_brand" onclick={insertMundoV2}>Confirmar</button>   
+                </div>
+                -->
+                <!-- via To -->
+                <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input value={nome} data-id="nome" onblur={onHandler} type="text" label="Mundo Name"></lightning-input>
+                </div>
+                <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input value={cor} data-id="cor" onblur={onHandler} type="text" label="Cor"></lightning-input>
+                </div>
+                <div  class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-combobox
+                    label="Possui Agua"
+                    value={pAgua}
+                    placeholder="Selecione se possui Agua"
+                    options={options}
+                    data-id="pAgua" onchange={onHandler} ></lightning-combobox>
+                </div>
+                <div  class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input value={quantLuas} data-id="quantLuas" onblur={onHandler}  type="number" label="Quantidade de Luas"></lightning-input>
+                </div>
+                <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <lightning-input value={tamanho} data-id="tamanho" onblur={onHandler} type="number" label="Tamanho"></lightning-input>
+                </div>
+                <div class="lds-col slds-size_1-of-2 slds-p-around_small lgc-bg">
+                    <button class="slds-button slds-button_neutral">Limpar</button>
+                    <button class="slds-button slds-button_brand" onclick={insertMundo}>Confirmar</button>   
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,5 @@
+.estilo{
+    background-color: mediumaquamarine;
+}
+
+:host { --sds-c-card-color-background: #ade3e8;}

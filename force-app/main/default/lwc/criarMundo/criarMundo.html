@@ -1,0 +1,23 @@
+<!-- HTML -->
+<template>
+    <lightning-card title={titulo}>
+        <!-- <lightning-input type="text" data-id="nome" label="Nome" onblur={handleInput}></lightning-input>
+        <lightning-input type="text" data-id="cor" label="Cor" onblur={handleInput}></lightning-input>
+        <lightning-input type="Number" data-id="distanciaSol" label="Distância Sol" onblur={handleInput}></lightning-input>
+        <lightning-input type="toggle" data-id="possuiAgua" label="Possui agua?" onclick={handleInput}></lightning-input>
+        <lightning-input type="Number" data-id="qtdeLua" label="Qtde Lua" onblur={handleInput}></lightning-input>
+        <lightning-input type="Number" data-id="tamanho" label="Tamanho" onblur={handleInput}></lightning-input>
+        <lightning-button label="Salvar Mundo" icon-name="utility:save" onclick={salvarMundo}></lightning-button>
+        <lightning-button label="Exibir mundos" icon-name="utility:save" onclick={salvarMundo}></lightning-button> -->
+        <div class="slds-m-vertical_large">
+            <!-- <lightning-input type="toggle" data-id="mostrarTamanho" label="Mostrar tamanho" onchange={handleInput}></lightning-input> -->
+            <lightning-input type="toggle" data-id="mostrarCor" data-nome="mostrarCor" data-teste="mostrarCor" label="Mostrar cor" onchange={handleInput}></lightning-input>
+            <lightning-input type="toggle" data-id="mostrarDistanciaSol" label="Mostrar Distancia Sol" onchange={handleInput}></lightning-input>
+            <lightning-input type="toggle" data-id="selecionarTudo" label="Selecionar tudo" onchange={handleInput}></lightning-input>
+        </div>
+        <template if:true={mostrarTabela}>
+            <c-criar-mundo-table mundo-list-external={mundoList} 
+            mostrar-tamanho={mostrarTamanho} mostrar-cor={mostrarCor} onselecionarmundo={receberItemSelecionado}></c-criar-mundo-table>
+        </template> 
+    </lightning-card> 
+</template>

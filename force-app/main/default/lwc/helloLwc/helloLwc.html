@@ -1,0 +1,21 @@
+<template>
+    
+    <lightning-card title={titulo}>
+        <div class="estilo">
+            <template if:true={ativo}>
+                verdadeiro
+            </template>
+            <template if:false={ativo}>
+                falso
+            </template>
+            <template if:false={ativo}>
+                falso
+            </template>
+            <template for:each={mundoList} for:item="mundo">
+                {mundo}
+            </template>
+        </div>
+
+
+    </lightning-card>
+</template>

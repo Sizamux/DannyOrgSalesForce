@@ -1,0 +1,49 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered border_layout">
+        <thead>
+            <tr class="slds-line-height_reset layoutHeader">
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <template if:true={mostrarTamanho}>
+                    <th scope="col">Tamanho</th>
+                </template>
+                <template if:true={mostrarCor}>
+                    <th scope="col">Cor</th>
+                </template>
+                <th scope="col">Luas</th>
+                <template if:true={mostrarDistanciaSol}>
+                    <th scope="col">Distancia do Sol</th>
+                </template>
+                
+                <th scope="col">Possui Água?</th>
+                <th scope="col">Apagar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={mundoList} for:item="item">
+                <tr key={item.id} class="slds-hint-parent">
+                    <th scope="col">
+                        <lightning-input data-nome={item.nome} type="checkbox" name="checkBoxGridI" onclick={selecionarMundo} ></lightning-input>
+                    </th>
+                    <td>{item.nome}</td>
+                    <template if:true={mostrarTamanho}>
+                        <td class="slds-text-align_center">{item.tamanho} Km</td>
+                    </template>
+                    <template if:true={mostrarCor}>
+                        <td class="slds-text-align_center">{item.cor}</td>
+                    </template>
+                    <td class="slds-text-align_center">{item.quantLuas}</td>
+                    <template if:true={mostrarDistanciaSol}>
+                        <td class="slds-text-align_center">{item.distanciaSol}</td>
+                    </template>
+                    <td class="slds-text-align_center">
+                        <lightning-input type="toggle" checked={item.pAgua}></lightning-input>
+                    </td>
+                    <td class="slds-text-align_center">
+                        <lightning-button data-id={item.id} variant="destructive" icon-name="utility:delete" class="slds-var-m-left_x-small" onclick={deletarMundo}></lightning-button>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</template>

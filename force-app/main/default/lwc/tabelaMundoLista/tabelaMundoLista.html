@@ -1,0 +1,26 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td if:true={showCorRecieved}>Cor</td>
+            <td>Possui Agua</td>
+            <td if:true={showQtdLuaRecieved}>Quantidade de Luas</td>
+            <td>Tamanho</td>
+            <td>#</td>
+        </tr>
+        <template if:true={mostrarTabelaRecieved}>
+            <template for:each={mundoListExternal} for:item="item">
+                <tr key={item.id} class="slds-hint-parent">
+                    <td><input key={item.id} type="checkbox" checked={item.selecionado} onchange={changeSAll}/></td>
+                    <td>{item.nome}</td>
+                    <td if:true={showCorRecieved}>{item.cor}</td>
+                    <td>{item.pAgua}</td>
+                    <td if:true={showQtdLuaRecieved}>{item.quantLuas}</td>
+                    <td>{item.tamanho}</td>
+                    <td><button key={item.id} class="slds-button slds-button_brand" onclick={deletarMundo}>Delete</button></td>
+                </tr>
+            </template>
+        </template>
+    </table>
+</template>

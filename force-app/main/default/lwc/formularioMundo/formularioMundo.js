@@ -20,7 +20,7 @@ export default class FormularioMundo extends LightningElement {
         nome: '',
         cor: '',
         pAgua: 0,
-        quantLuas: '',
+        quantLuas: false,
         tamanho: 0,
     }
 

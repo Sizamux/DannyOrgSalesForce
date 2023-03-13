@@ -5,15 +5,12 @@ public with sharing class ClienteController {
         Cliente__c novoCliente = new Cliente__c();
         Id cliPf = Schema.SObjectType.Cliente__c.getRecordTypeInfosByName().get('ClientePF').getRecordTypeId();
         Id cliPj = Schema.SObjectType.Cliente__c.getRecordTypeInfosByName().get('ClientePJ').getRecordTypeId();
-
+        
         novoCliente.Name = clienteTo.nome;
         novoCliente.CPF__c = clienteTo.cpf;
         novoCliente.CNPJ__c = clienteTo.cnpj;
 
         String tipoDeRocord = clienteTo.recordType;
-        
-        cliPjBool = false;
-        cliPfBool = false;
 
         if(tipoDeRocord == 'Pf'){
             novoCliente.RecordTypeId = cliPf;

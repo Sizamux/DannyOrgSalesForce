@@ -1,8 +1,8 @@
 <apex:page controller="NewCaseListController">
-    <!--
-    <apex:pageBlockTable value="{! cases }" var="case">
-        <apex:column value="{! case.Id }"/>
-        <apex:column value="{! case.CaseNumber }"/>
-    </apex:pageBlockTable>
-        -->
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{! newCases }" var="case">
+            <apex:column value="{! case.Id }"/>
+            <apex:column value="{! case.CaseNumber }"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
 </apex:page>

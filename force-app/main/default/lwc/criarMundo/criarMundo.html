@@ -16,8 +16,7 @@
             <lightning-input type="toggle" data-id="selecionarTudo" label="Selecionar tudo" onchange={handleInput}></lightning-input>
         </div>
         <template if:true={mostrarTabela}>
-            <c-criar-mundo-table mundo-list-external={mundoList} 
-            mostrar-tamanho={mostrarTamanho} mostrar-cor={mostrarCor} onselecionarmundo={receberItemSelecionado}></c-criar-mundo-table>
+            <c-criar-mundo-table mundo-list-external={mundoList} ></c-criar-mundo-table>
         </template> 
     </lightning-card> 
 </template>

@@ -19,18 +19,16 @@ public with sharing class mundoController {
     }
 
     @AuraEnabled
-    public static void deleteMundos(string idd){
-        Mundo__c newMundo = [SELECT Id FROM Mundo__c WHERE id= :idd];
+    public static void deleteMundos(List<string> id){
+        List<Mundo__c> mundoDelList = [SELECT Id FROM Mundo__c WHERE id IN :id];
         
-        delete newMundo;
+        delete mundoDelList;
     }
 
     @AuraEnabled
     public static void setMundos(MundoTO mundoTo){
         Mundo__c newMundo = new Mundo__c();
-
-        Id filialRT = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Cliente PF').getRecordTypeId();
-        Id matrizRT = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Cliente PJ').getRecordTypeId();
+        
         newMundo.Name = mundoTo.nome;
         newMundo.Cor__c = mundoTo.cor;
         newMundo.PossuiAgua__c = mundoTo.pAgua;
